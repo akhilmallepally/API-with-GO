@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-
+import { Link } from 'react-router-dom';
 export default class Scientists extends Component {
     state = {scientists: []}
 
@@ -21,7 +21,7 @@ export default class Scientists extends Component {
             <ul>
                 {this.state.scientists.map((s)=>(
                     <li key={s.id}>
-                          {s.name}
+                          <Link to={`/scientists/${s.id}`}>{s.name}</Link>
                     </li>
                 ))}
             </ul>
