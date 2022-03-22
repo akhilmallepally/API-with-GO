@@ -6,25 +6,25 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type movie struct {
-	ID       int    `json:"id"`
-	Name     string `json:"name"`
-	Director string `json:"director"`
-	Year     int    `json:"year"`
+type event struct {
+	ID           int    `json:"id"`
+	Name         string `json:"name"`
+	Organization string `json:"organization"`
+	Date         string `json:"date"`
 }
 
-var movies = []movie{
-	{ID: 1, Name: "Shutter Island", Director: "Martin Scorsese", Year: 2010},
-	{ID: 2, Name: "Shutter Island", Director: "Martin Scorsese", Year: 2010},
-	{ID: 3, Name: "Shutter Island", Director: "Martin Scorsese", Year: 2010},
+var events = []event{
+	{ID: 1, Name: "Shutter Island", Organization: "Martin Scorsese", Date: "2010"},
+	{ID: 2, Name: "Shutter Island", Organization: "Martin Scorsese", Date: "2010"},
+	{ID: 3, Name: "Shutter Island", Organization: "Martin Scorsese", Date: "2010"},
 }
 
-func getMovies(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, movies)
+func getEvents(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, events)
 }
 
 func main() {
 	router := gin.Default()
-	router.GET("/movies", getMovies)
+	router.GET("/movies", getEvents)
 	router.Run("localhost:8080")
 }

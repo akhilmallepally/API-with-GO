@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+
+.app {
+  max-width: 80%;
+  margin: 0 auto;
+  font-family: 'Roboto';
+}
